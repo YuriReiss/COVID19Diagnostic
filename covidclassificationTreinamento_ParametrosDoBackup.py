@@ -8,7 +8,7 @@ from tensorflow import keras
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.models import Sequential
 
-# Função para carregar imagens em tons de cinza
+# Função para carregar imagens e em tons de cinza
 def load_grayscale_images(path, urls, target, image_size=(100, 100)):
     images = []
     labels = []
@@ -22,7 +22,7 @@ def load_grayscale_images(path, urls, target, image_size=(100, 100)):
     images = np.asarray(images)
     return images, labels
 
-# Carregando imagens para as três classes em tons de cinza
+# Carregando imagens para as três classes
 covid_path = "COVID-19_Radiography_Dataset/COVID/images"
 covid_urls = os.listdir(covid_path)
 covid_images, covid_targets = load_grayscale_images(covid_path, covid_urls, 0)
@@ -47,7 +47,7 @@ x_train, x_test, y_train, y_test = train_test_split(data, targets, test_size=0.2
 
 # Definindo o modelo
 model = Sequential([
-    Conv2D(128, 3, input_shape=(100, 100, 1), activation='relu'),  # Agora temos apenas 1 canal (tons de cinza)
+    Conv2D(128, 3, input_shape=(100, 100, 1), activation='relu'),  # Apenas 1 canal (tons de cinza)
     MaxPooling2D(),
     Conv2D(64, 3, activation='relu'),
     MaxPooling2D(),
