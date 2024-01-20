@@ -74,3 +74,5 @@ plt.plot(history.history['loss'], label='train loss')
 plt.plot(history.history['val_loss'], label='test loss')
 plt.legend()
 plt.show()
+
+model.save("models/CovidDiagnostic.keras")
