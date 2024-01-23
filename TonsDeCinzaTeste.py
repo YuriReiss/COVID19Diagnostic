@@ -1,7 +1,7 @@
 import cv2
 
 # Exemplo de carregamento de uma imagem colorida
-image_path = 'COVID-19_Radiography_Dataset/Covid/images/Covid-55.png'
+image_path = 'COVID-19_Radiography_Dataset/COVID/images/COVID-55.png'
 image = cv2.imread(image_path)
 
 # Convertendo para tons de cinza
